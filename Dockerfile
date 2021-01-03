@@ -5,8 +5,9 @@ RUN apt-get install -y chef curl apache2 unzip composer libapache2-mod-security2
 RUN cd /home
 RUN mkdir holding
 RUN cd holding/
-RUN git clone https://github.com/dev-sec/cis-docker-benchmark
-RUN inspec exec cis-docker-benchmark
+RUN git clone https://github.com/docker/docker-bench-security.git
+RUN cd docker-bench-security
+RUN sh docker-bench-security.sh
 RUN cd /home
 RUN rm -rf holding/
 RUN cd /var/www/html
