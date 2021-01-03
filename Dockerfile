@@ -5,9 +5,6 @@ RUN apt-get install -y curl apache2 unzip composer libapache2-mod-security2 liba
 RUN cd /home
 RUN mkdir holding
 RUN cd holding/
-RUN git clone https://github.com/docker/docker-bench-security.git
-RUN cd docker-bench-security
-RUN sh docker-bench-security.sh
 RUN cd /home
 RUN rm -rf holding/
 RUN cd /var/www/html
