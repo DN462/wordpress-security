@@ -16,6 +16,6 @@ RUN rm -rf /var/www/html/wordpress
 RUN cd /var/www && composer require vlucas/phpdotenv
 RUN git clone https://github.com/docker/docker-bench-security.git
 RUN ls
-RUN cd docker-bench-security && chmod 0700 docker-bench-security.sh && ./docker-bench-security.sh
+RUN cd docker-bench-security && ls docker-bench-security && chmod 0700 /docker-bench-security/docker-bench-security.sh && ./docker-bench-security/docker-bench-security.sh
 RUN cd /var/www
 RUN rm -rf /var/www/docker-bench-security
