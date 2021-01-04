@@ -7,12 +7,8 @@ RUN mkdir holding
 RUN cd holding/
 RUN cd /home
 RUN rm -rf holding/
-RUN cd /var/www/html
+RUN cd /var/www/
 RUN wget https://wordpress.org/latest.zip
-RUN unzip latest.zip
-RUN cd wordpress
-RUN cp -rf * /var/www/html
-RUN cd /var/www/html
-RUN rm -rf wordpress/ latest.zip
-RUN cd /var/www
+RUN unzip -d /var/www/html latest.zip
+RUN rm latest.zip
 RUN composer require vlucas/phpdotenv
