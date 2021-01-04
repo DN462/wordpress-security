@@ -9,6 +9,6 @@ RUN cd /home
 RUN rm -rf holding/
 RUN cd /var/www/
 RUN wget https://wordpress.org/latest.zip
-RUN unzip latest.zip "wordpress/*" -d /var/www/html
+RUN unzip latest.zip 'wordpress/**/*' -d /var/www/html
 RUN rm latest.zip
 RUN composer require vlucas/phpdotenv
